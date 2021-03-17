@@ -48,11 +48,11 @@ export default {
     message: "",
     id: null,
     nameRules: [
-      v => !!v || "Name is required",
+      v => !!v || "Choose a name",
       v => (v && v.length <= 16) || "Name must be less than 16 characters"
     ],
     room: "",
-    roomRules: [v => !!v || "Enter the room"],
+    roomRules: [v => !!v || "Sky's the limit"],
     snackbar: false
   }),
   mounted() {
@@ -60,7 +60,7 @@ export default {
     if (message === "noUser") {
       this.message = "Enter your name and room";
     } else if (message === "leftChat") {
-      this.message = "You leaved chat";
+      this.message = "mic has been dropped";
     }
     this.snackbar = !!this.message;
   },
